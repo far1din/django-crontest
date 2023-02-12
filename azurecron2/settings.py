@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # INFO: INTERNAL
     'cron',
 
+    # INFO: EXTERNAL
     'django_crontab',
 
 ]
@@ -79,10 +81,33 @@ WSGI_APPLICATION = 'azurecron2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# testuser123
+# fQeMKwdYW4C6CBL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'azure_test',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456789',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'azure_test',
+        'USER': 'testuser123@azurecron2db',
+        'PASSWORD': 'fQeMKwdYW4C6CBL',
+        'HOST': 'azurecron2db.postgres.database.azure.com',
+        'PORT': '5432',
     }
 }
 
