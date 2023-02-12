@@ -129,6 +129,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## INFO: NEW LINES ##
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://azurecron2.azurewebsites.net'
+]
+
 CRONJOBS = [
     ('* * * * *', 'cron.cronjob.AddTestJob')
 ]
